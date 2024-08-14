@@ -1,0 +1,140 @@
+\documentclass{scrartcl}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\title{Tablas y gráficos}
+\author{Leonardo Lovera}
+
+\maketitle
+
+A continuación mostramos algunos ejemplos usuales de gráficos generados con los \texttt{.csv}
+generados por \texttt{uhr}. Luego, veremos las tablas correspondientes generadas por \texttt{csvltx}.
+
+\section*{Gráficos}
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \begin{loglogaxis}[title={log-log}, log base x = 2, xtick=data, xlabel={x axis label}, ylabel={y axis label}]
+            \addplot table [x=n, y=t_mean, col sep=comma] {experimental_data/log-log_ms.csv};
+        \end{loglogaxis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \begin{axis}[title={Super cool and descriptive name}, xlabel={Unit length variable}, ylabel={Response}]
+            \addplot table [x=p, y=t_mean, col sep=comma] {experimental_data/cool_ms.csv};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \begin{semilogxaxis}[title={semi-log plot}, log base x = 2, xlabel={Position}, ylabel={Average happiness}, ymin=275, ymax=285]
+            \addplot table [x=p, y=t_mean, col sep=comma] {experimental_data/semi-log_ns.csv};
+        \end{semilogxaxis}
+    \end{tikzpicture}
+\end{center}
+
+Si solamente se quiere generar un gráfico y no necesariamente usar \LaTeX, sigue sirviendo esta
+técnica cambiando el \texttt{documentclass} a \texttt{standalone}, lo que permite generar gráficos en
+\texttt{.pdf} portables para otros propósitos.
+
+\section*{Tablas}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+    \hline
+    \multicolumn{3}{|c|}{\texttt{log-log\_ms}} \\
+    \hline
+    \texttt{n} & \texttt{t\_mean} & \texttt{t\_stdev} \\
+    \hline
+    8 & 5.30802e-05 & 1.14243e-06 \\
+    \hline
+    64 & 0.000160142 & 3.68659e-06 \\
+    \hline
+    512 & 0.000931126 & 4.00216e-05 \\
+    \hline
+    4096 & 0.00719646 & 0.000932411 \\
+    \hline
+    32768 & 0.0610976 & 0.00589483 \\
+    \hline
+    262144 & 0.485865 & 0.0170079 \\
+    \hline
+    2097152 & 4.02294 & 0.0962575 \\
+    \hline
+    16777216 & 32.1973 & 1.40627 \\
+    \hline
+    134217728 & 262.37 & 18.0376 \\
+    \hline
+\end{tabular}
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    \multicolumn{3}{|c|}{\texttt{cool\_ms}} \\
+    \hline
+    \texttt{p} & \texttt{t\_mean} & \texttt{t\_stdev} \\
+    \hline
+    0 & 4.5075e-05 & 1.75632e-06 \\
+    \hline
+    0.125 & 4.04943 & 0.138594 \\
+    \hline
+    0.25 & 8.05313 & 0.0954546 \\
+    \hline
+    0.375 & 12.0908 & 0.0962799 \\
+    \hline
+    0.5 & 16.1394 & 0.176301 \\
+    \hline
+    0.625 & 20.2035 & 0.47803 \\
+    \hline
+    0.75 & 24.191 & 1.4683 \\
+    \hline
+    0.875 & 28.2644 & 0.26736 \\
+    \hline
+    1 & 32.3056 & 0.30478 \\
+    \hline
+\end{tabular}
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    \multicolumn{3}{|c|}{\texttt{semi-log\_ns}} \\
+    \hline
+    \texttt{p} & \texttt{t\_mean} & \texttt{t\_stdev} \\
+    \hline
+    0 & 288.835 & 2.7205 \\
+    \hline
+    2097151 & 279.319 & 2.23414 \\
+    \hline
+    4194302 & 280.32 & 2.07906 \\
+    \hline
+    6291453 & 279.507 & 2.08915 \\
+    \hline
+    8388604 & 279.166 & 1.87087 \\
+    \hline
+    10485755 & 279.739 & 2.2409 \\
+    \hline
+    12582906 & 279.489 & 2.00447 \\
+    \hline
+    14680057 & 279.358 & 2.17522 \\
+    \hline
+    16777208 & 278.802 & 2.27606 \\
+    \hline
+\end{tabular}
+\end{center}
+
+Todas estas tablas fueron generadas usando \texttt{csvltx} y en las últimas dos se modificó el heading
+para que dijeran \texttt{p} en vez de \texttt{n}. 
+\end{document}

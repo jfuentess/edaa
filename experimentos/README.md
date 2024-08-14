@@ -28,6 +28,13 @@ bastante bien.
 Donde `<filename>` es el nombre de archivo donde se escribirán los resultados.
 El archivo no debe existir previamente y debe tener extensión `.csv`
 
+Se recomienda que se deben escoger unidades de tiempo que sean significativas:
+es decir si todo se ejecuta rápidamente, usar nanosegundos, si se demora un
+poco más, usar micro segundos, luego milisegundos... En este sentido es bueno
+tener nombres de archivos _semánticos_. Yo uso: elemento probado + _ + unidad
+de tiempo. Así los CSVs se describen solos, se puede saber qué información
+contienen y en qué unidades está.
+
 ## Tablas
 
 En [csvltx](https://github.com/leonardlover/csvltx) hay una herramienta que
@@ -47,3 +54,19 @@ Tambien existe una alternativa en Python usando Pandas, que es
 el uso de este requiere cargar el CSV como DataFrame y usar el paquete `booktabs`
 en LaTeX, así que la alternativa en Rust funciona puramente en la terminal y no
 requiere adiciones a LaTeX.
+
+## Gráficos
+
+Se recomienda usar [pgfplots](https://ctan.org/pkg/pgfplots?lang=en) o
+[matplotlib](https://matplotlib.org) para hacer los gráficos, especialmente la
+primera opción. Esto pues todo el pipeline anterior se integra muy bien pues
+pgfplots puede hacer un gráfico directamente de un CSV.
+
+Ver [ejemplo](./ejemplo.tex) para ver la sintáxis de creación de gráficos normales,
+semi-log y log-log para distintos CSVs.
+
+## Ejemplos
+
+En [experimental_data](./experimental_data) se encuentran algunos CSV generados con
+uhr y también se presenta un [ejemplo](./ejemplo.pdf) para que se vean qué tal
+quedan los gráficos y tablas usando los procesos recomendados.

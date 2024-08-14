@@ -1,2 +1,2 @@
 # edaa
-Repositorio del curso Estructuras de datos y algoritmos avanzados
+Repositorio del curso Estructuras de Datos y Algoritmos Avanzados.
