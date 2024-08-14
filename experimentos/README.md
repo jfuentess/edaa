@@ -11,7 +11,7 @@ que reporta _tiempo promedio y desviación estándar_ para un set de tests.
 
 #### Compilación
 
-```[bash]
+```bash
 g++ uhr.cpp -std=c++11 -O2 -o uhr
 ```
 
@@ -21,7 +21,7 @@ bastante bien.
 
 #### Uso
 
-```[bash]
+```bash
 ./uhr <filename>.csv
 ```
 
@@ -35,7 +35,7 @@ ayuda al parsing de archivos CSV en formato de tabla para uso en LaTeX.
 
 Para poder ejecutarla, deben tener [Rust](https://www.rust-lang.org) instalado,
 en particular `cargo` y simplemente deben clonar el repositorio y hacer
-```[bash]
+```bash
 cargo run <filename>
 ```
 
