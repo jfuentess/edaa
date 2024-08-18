@@ -24,11 +24,20 @@ ciclos.
 ### Uso
 
 ```bash
-./uhr <filename>.csv
+./uhr <filename>.csv <runs> <lower> <upper> <step>
 ```
 
 Donde `<filename>` es el nombre de archivo donde se escribirán los resultados.
-El archivo no debe existir previamente y debe tener extensión `.csv`
+El archivo no debe existir previamente y debe tener extensión `.csv`. Los
+siguientes argumentos describen las pruebas, todos deben ser positivos e
+indican cuántas repeticiones por prueba, límites inferior y superior y
+el salto prueba a prueba, respectivamente.
+
+Se recomienda que `<runs>` sea al menos igual a 32, esto para poder tener
+los caches en caliente y poder tener suficientes muestras para confianza
+estadística. Yo tiendo a hacer 256 repeticiones si es que es permisivo esto
+en tiempo, en caso contrario uso 64 y si es que cada experimento se demora
+alrededor de un segundo es que uso 32.
 
 Se recomienda que se deben escoger unidades de tiempo que sean significativas:
 es decir si todo se ejecuta rápidamente, usar nanosegundos, si se demora un
