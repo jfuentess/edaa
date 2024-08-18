@@ -12,12 +12,14 @@ que reporta _tiempo promedio y desviación estándar_ para un set de tests.
 ### Compilación
 
 ```bash
-g++ uhr.cpp -std=c++11 -O2 -o uhr
+g++ uhr.cpp -std=c++11 -O0 -o uhr
 ```
 
 Se pueden usar versiones más nuevas de C++ (14, 17, 20), pero NO anteriores
-a C++11. También se puede optimizar de otras formas, pero `-O2` funciona
-bastante bien.
+a C++11. Se debe usar `-O0` para que el compilador no optimice el loop en
+donde se realiza la medición de tiempo. Así que se recomienda programar
+usando técnicas de optimización como hoisting para evitar recalcular en
+ciclos.
 
 ### Uso
 
