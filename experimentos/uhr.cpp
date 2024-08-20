@@ -143,7 +143,7 @@ int main(int argc, char *argv[])
 
     // Set up random number generation
     std::random_device rd;
-    std::mt19937 rng(rd());
+    std::mt19937_64 rng(rd());
     std::uniform_int_distribution<std::int64_t> u_distr; // change depending on app
 
     // File to write time data
