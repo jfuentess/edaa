@@ -74,7 +74,7 @@ inline void display_progress(std::int64_t u, std::int64_t v)
     const std::int64_t p = width * progress;
     std::int64_t i;
 
-    std::cout << "[";
+    std::cout << "\033[1m[";
     for (i = 0; i < width; i++) {
         if (i < p)
             std::cout << "=";
@@ -83,7 +83,7 @@ inline void display_progress(std::int64_t u, std::int64_t v)
         else
             std::cout << " ";
     }
-    std::cout << "] " << std::int64_t(progress * 100.0) << "%\r";
+    std::cout << "] " << std::int64_t(progress * 100.0) << "%\r\033[0m";
     std::cout.flush();
 }
 
@@ -152,6 +152,7 @@ int main(int argc, char *argv[])
     time_data << "n,t_mean,t_stdev,t_Q0,t_Q1,t_Q2,t_Q3,t_Q4" << std::endl;
 
     // Begin testing
+    std::cout << "\033[0;36mRunning tests...\033[0m" << std::endl << std::endl;
     executed_runs = 0;
     for (n = lower; n <= upper; n += step) {
         mean_time = 0;
@@ -192,7 +193,8 @@ int main(int argc, char *argv[])
     }
 
     // This is to keep loading bar after testing
-    std::cout << std::endl;
+    std::cout << std::endl << std::endl;
+    std::cout << "\033[1;32mDone!\033[0m" << std::endl;
 
     time_data.close();
 
