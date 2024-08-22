@@ -57,9 +57,9 @@ en particular `cargo` y simplemente deben clonar el repositorio y hacer
 cargo run <filename> <unit>
 ```
 
-Donde `<filename>` es el archivo CSV que fue escrito por uhr y <unit> es la
-unidad de los datos del CSV. Esto imprimirá en la consola el texto que hay
-que copiar en el archivo LaTeX para mostrar la tabla.
+Donde `<filename>` es el archivo CSV que fue escrito por uhr y `<unit>` es
+la unidad de los datos del CSV. Esto imprimirá en la consola el texto que
+hay que copiar en el archivo LaTeX para mostrar la tabla.
 
 Tambien existe una alternativa en Python usando Pandas, que es
 [`to_latex`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_latex.html),
