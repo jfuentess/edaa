@@ -27,7 +27,7 @@ el otro heap con el cual se quiere hacer meld.
 ## Referencias interesantes
 
 - Floyd, Robert (1964). _Algorithm 245 – Treesort 3_. Communications of the ACM. *7* (12): 701.
-- GeeksForGeeks (2023). _Implementation of Binomial Heap_. Disponible en línea [aquí](https://www.geeksforgeeks.org/implementation-binomial-heap/)
+- GeeksForGeeks (2023). _Implementation of Binomial Heap_. Disponible en línea [aquí](https://www.geeksforgeeks.org/implementation-binomial-heap/).
 - Knuth, Donald (1998). _Sorting and Searching_. The Art of Computer Programming. Vol. 3 (2nd ed.). Addison-Wesley Professional.
 - Vuillemin, Jean (1978). _A data structure for manipulating priority queues_. Communications of the ACM. *21* (4): 309–315.
 - Williams, J. W. J. (1964). _Algorithm 232 - Heapsort_. Communications of the ACM. *7* (6): 347–348
