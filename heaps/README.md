@@ -28,7 +28,15 @@ el otro heap con el cual se quiere hacer meld.
 
 - Floyd, Robert (1964). _Algorithm 245 – Treesort 3_. Communications of the ACM. *7* (12): 701.
 - GeeksForGeeks (2023). _Implementation of Binomial Heap_. Disponible en línea [aquí](https://www.geeksforgeeks.org/implementation-binomial-heap/)
-- ISO/IEC (2011). _ISO International Standard ISO/IEC 14882:2011_.
 - Knuth, Donald (1998). _Sorting and Searching_. The Art of Computer Programming. Vol. 3 (2nd ed.). Addison-Wesley Professional.
 - Vuillemin, Jean (1978). _A data structure for manipulating priority queues_. Communications of the ACM. *21* (4): 309–315.
 - Williams, J. W. J. (1964). _Algorithm 232 - Heapsort_. Communications of the ACM. *7* (6): 347–348
+
+A Williams le es atribuida la invención de los heaps, aunque su algoritmo de
+construcción no era lineal, fue Floyd quien dio la primera descripción de un
+heapify lineal. Finalmente, Vuillemin inventa los heaps binomiales en 1978.
+
+También hay manejo de heaps binarios en Python, ver el módulo [`heapq`](https://docs.python.org/3/library/heapq.html).
+
+Hay muchos más tipos de heaps, uno de los más importantes y con mejores
+garantías teóricas son los de [Fibonacci](https://en.wikipedia.org/wiki/Fibonacci_heap).
