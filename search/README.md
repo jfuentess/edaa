@@ -4,6 +4,17 @@ Aquí se implementan algoritmos básicos de búsqueda. La búsqueda secuencial
 es la única que funciona en datos arbitrarios, mientras que la búsqueda
 binaria y galopante requieren de tener datos _ordenados_.
 
+## Complejidades
+
+Sea $n$ el tamaño del rango sobre el cual buscar y $p$ la posición del
+elemento buscado.
+
+| Algoritmo | Complejidad temporal |
+| ----- | :-----: |
+| [`sequential_search`](./sequential_search.cpp) | $O(n)$ |
+| [`binary_search`](./binary_search.cpp) | $O(\log n)$ |
+| [`galloping_search`](./galloping_search.cpp) | $O(\log p)$ |
+
 ## Alternativas en STL
 
 En [`<algorithm>`](https://en.cppreference.com/w/cpp/header/algorithm) se
