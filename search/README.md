@@ -10,7 +10,7 @@ Sea $n$ el tamaño del rango sobre el cual buscar y $p$ la posición del
 elemento buscado.
 
 | Algoritmo | Complejidad temporal |
-| ----- | :-----: |
+| ----- | ----- |
 | [`sequential_search`](./sequential_search.cpp) | $O(n)$ |
 | [`binary_search`](./binary_search.cpp) | $O(\log n)$ |
 | [`galloping_search`](./galloping_search.cpp) | $O(\log p)$ |
