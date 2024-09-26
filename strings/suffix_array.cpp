@@ -129,6 +129,11 @@ public:
 
         return matches;
     }
+
+    std::int64_t& operator[](std::int64_t i)
+    {
+        return SA[i];
+    }
 };
 
 #endif
