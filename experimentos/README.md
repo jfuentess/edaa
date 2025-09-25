@@ -65,7 +65,7 @@ Al momento de ejecutar hacemos lo siguiente:
 ```bash
 valgrind --tool=massif ./groesse
 ```
-Haciendo esto, le decimos a Valgrind que durante la ejecución del código calcule cuanta memoria se ha utilizado. Eso nos servirá para tener un archivo del estilo [n, size].
+Haciendo esto, le decimos a Valgrind que varias veces durante la ejecución del código calcule cuanta memoria se ha utilizado. Eso nos servirá para tener un archivo del estilo [n, size].
 
 Cuando el código termine de ejecutarse, obtendremos un archivo llamado `massif.out.<pid>` donde `<pid>`es el número del proceso. Este archivo tendrá mucha información que no necesitamos y es complicada de interpretar. Aquí es donde entra [valgrind_parser](./valgrind_parser.py). Dentro de este código deben cambiar el `<pid>` por el que quieren parsear y poner algún nombre para el CSV en el que guardaran los datos.
 
