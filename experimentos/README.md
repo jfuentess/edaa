@@ -46,6 +46,31 @@ tener nombres de archivos _semánticos_. Yo uso: elemento probado + _ + unidad
 de tiempo. Así los CSVs se describen solos, se puede saber qué información
 contienen y en qué unidades está.
 
+## Espacio
+Si se quiere medir el crecimiento del espacio utilizado por una estructura de datos, usando [groesse](./groesse.cpp) (tamaño, en alemán) y [valgrind_parser](./valgrind_parser.py) es posible. 
+La lógica es la siguiente, dentro de [groesse](./groesse.cpp) utilizamos algún método para agregar valores (insert, push_back, push, etc) de la EDD que queremos analizar.
+
+### Compilación
+
+```bash
+ g++ groesse.cpp -O0 -g -o groesse
+```
+
+Se debe usar la versión de C++ que sea necesaria para la EDD que se quiere medir. Se debe usar `-O0` para que el compilador no optimice el loop donde la estructura va creciendo en tamaño. Se debe usar la flag -g ya que con esta Valgrind puede acceder a información de debugging.
+
+### Uso
+
+Al momento de ejecutar hacemos lo siguiente:
+
+```bash
+valgrind --tool=massif ./groesse
+```
+Haciendo esto, le decimos a Valgrind que durante la ejecución del código calcule cuanta memoria se ha utilizado. Eso nos servirá para tener un archivo del estilo [n, size].
+
+Cuando el código termine de ejecutarse, obtendremos un archivo llamado `massif.out.<pid>` donde `<pid>`es el número del proceso. Este archivo tendrá mucha información que no necesitamos y es complicada de interpretar. Aquí es donde entra [valgrind_parser](./valgrind_parser.py). Dentro de este código deben cambiar el `<pid>` por el que quieren parsear y poner algún nombre para el CSV en el que guardaran los datos.
+
+Después de todo este proceso, obtendrán un lindo CSV con el formato [n, size], con el que podrán realizar gráficos.
+
 ## Tablas
 
 En [csvltx](https://github.com/leonardlover/csvltx) hay una herramienta que
