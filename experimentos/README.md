@@ -47,7 +47,7 @@ de tiempo. Así los CSVs se describen solos, se puede saber qué información
 contienen y en qué unidades está.
 
 ## Espacio
-Si se quiere medir el crecimiento del espacio utilizado por una estructura de datos, usando [groesse](./groesse.cpp) (tamaño, en alemán) y [valgrind_parser](./valgrind_parser.py) es posible. 
+Si se quiere medir el crecimiento del espacio utilizado por una estructura de datos, usando [groesse](./groesse.cpp) (en alemán la palabra Größe es tamaño, groesse es una forma equivalente de escribirlo sin ö y sin ß) y [valgrind_parser](./valgrind_parser.py) es posible. 
 La lógica es la siguiente, dentro de [groesse](./groesse.cpp) utilizamos algún método para agregar valores (insert, push_back, push, etc) de la EDD que queremos analizar.
 
 ### Compilación
