@@ -3,6 +3,10 @@
  * T must allow a total ordering <.
  *
  * Author: LELE */
+
+/* Aclaración 
+Se debe usar C++20 para compilar.
+*/
  
 #ifndef SEGMENT_TREE
 #define SEGMENT_TREE
@@ -11,6 +15,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <vector>
+#include <bit>
  
 template<class T>
 class segment_tree
