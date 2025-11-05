@@ -4,9 +4,6 @@
  *
  * Author: LELE */
 
-/* Aclaración 
-Se debe usar C++20 para compilar.
-*/
 #ifndef SPARSE_TABLE
 #define SPARSE_TABLE
 
@@ -16,7 +13,6 @@ Se debe usar C++20 para compilar.
 #include <iostream>
 #include <numeric>
 #include <vector>
-#include <bit>
 
 template<class T>
 class sparse_table
